@@ -1,5 +1,5 @@
 # Docker image to run php-resque
 
-tba
+Build a docker container to run php resque workers
 
 
