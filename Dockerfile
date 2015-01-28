@@ -18,9 +18,10 @@ RUN \
     /usr/local/bin/docker-php-ext-install simplexml soap tidy tokenizer xml xmlreader xmlrpc && \
     /usr/local/bin/docker-php-ext-install xmlwriter xsl zip bcmath calendar ctype && \
     /usr/local/bin/docker-php-ext-install exif && \
-    /usr/local/bin/docker-php-ext-install fileinfo && \
-    rm -v && \
-          /usr/local/etc/php/conf.d/ext-ctype.ini \
+    /usr/local/bin/docker-php-ext-install fileinfo
+
+RUN \
+    rm -v /usr/local/etc/php/conf.d/ext-ctype.ini \
           /usr/local/etc/php/conf.d/ext-curl.ini \
           /usr/local/etc/php/conf.d/ext-dom.ini \
           /usr/local/etc/php/conf.d/ext-fileinfo.ini \
