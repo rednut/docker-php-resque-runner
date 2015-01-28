@@ -18,8 +18,22 @@ RUN \
     /usr/local/bin/docker-php-ext-install simplexml soap tidy tokenizer xml xmlreader xmlrpc && \
     /usr/local/bin/docker-php-ext-install xmlwriter xsl zip bcmath calendar ctype && \
     /usr/local/bin/docker-php-ext-install exif && \
-    /usr/local/bin/docker-php-ext-install fileinfo
-    
+    /usr/local/bin/docker-php-ext-install fileinfo && \
+    rm -v && \
+          /usr/local/etc/php/conf.d/ext-ctype.ini \
+          /usr/local/etc/php/conf.d/ext-curl.ini \
+          /usr/local/etc/php/conf.d/ext-dom.ini \
+          /usr/local/etc/php/conf.d/ext-fileinfo.ini \
+          /usr/local/etc/php/conf.d/ext-json.ini \
+          /usr/local/etc/php/conf.d/ext-pdo.ini \
+          /usr/local/etc/php/conf.d/ext-phar.ini \
+          /usr/local/etc/php/conf.d/ext-posix.ini \
+          /usr/local/etc/php/conf.d/ext-simplexml.ini \
+          /usr/local/etc/php/conf.d/ext-xml.ini \
+          /usr/local/etc/php/conf.d/ext-xmlreader.ini \
+          /usr/local/etc/php/conf.d/ext-xmlwriter.ini \
+          /usr/local/etc/php/conf.d/ext-tokenizer.ini
+
 RUN \
   pecl install redis \
   && echo "extension=redis.so" > /usr/local/etc/php/conf.d/ext-redis.ini
